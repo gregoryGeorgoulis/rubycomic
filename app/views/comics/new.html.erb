@@ -1,0 +1,5 @@
+<%= form_tag("/comics", method: "post") do %>
+  <%= label_tag(:title, "Enter Title") %>
+  <%= text_field 'comic', 'title' %>
+  <%= submit_tag("create") %>
+<% end %>

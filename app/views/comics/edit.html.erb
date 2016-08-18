@@ -1,0 +1,5 @@
+<%= form_tag("/comics/#{@comic.id}", method: "put") do %>
+  <%= label_tag(:title, "Edit Title") %>
+  <%= text_field 'comic', 'title' %>
+  <%= submit_tag("Edit") %>
+<% end %>

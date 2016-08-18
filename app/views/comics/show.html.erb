@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<% if @response["data"]['results'].length === 0 %>
+
+		<h2>Hey <%= current_user.username %></h2>
+		<h2>Looks like you spelled the comic wrong</h2>
+		<h2>Heres some boobs</h2>
+		<img src="http://www.thewolfpacksociety.com/wp-content/uploads/2015/07/katee-owen-bounce-gif-2.gif">
+		<br/>
+		<h2>OR if you like edit the spelling</h2>
+		<%= link_to 'Edit', edit_comic_path(@comic.id), :class => 'comic-edit' %>
+
+	<% else %>
+
+		<h2>Hey <%= current_user.username %> Check out <%= @comic.title %> </h2>
+		<br/>
+		<% for i in 0..4 %>
+			<p><%= @response["data"]['results'][i]['title'] %></p>
+			<br/>
+			<img src="<%= @response["data"]['results'][i]['thumbnail']['path'] + "/portrait_incredible.jpg" %>"/>
+			<p><%= @response["data"]['results'][i]['description'] %></p>
+			<br/>
+			<p><%= Date.parse(@response["data"]['results'][i]['dates'][0]['date']).strftime('Released on %A %b %I, %Y')%></p>
+			<hr>
+			<br/>
+		<% end %>
+	<% end %>
+	<br/>
+	<%= link_to 'Delete this comic', @comic, :method => 'delete', :class => 'delete' %>
+</body>
+</html>
+
+
+

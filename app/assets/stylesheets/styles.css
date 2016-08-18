@@ -1,0 +1,72 @@
+*{
+	padding: 0 auto;
+	margin: 0 auto;
+	text-align: center;
+}
+#header{
+	background-color: red;
+	color: white;
+	text-shadow: 1px 1px red;
+}
+.navbar-link{
+	color: white;
+	text-shadow: 1px 1px red;
+
+	padding: .2rem;
+}
+.navbar-link2{
+	color: white;
+	text-shadow: 1px 1px navy;
+
+	padding: .2rem;
+}
+.navbar-link2:hover {
+	text-shadow: 1px 1px red;
+}
+.navbar-link3{
+	color: white;
+	text-shadow: 1px 1px navy;
+	float: right;
+	padding: .2rem;
+}
+.navbar-link3:hover {
+	text-shadow: 1px 1px red;
+}
+
+#nav{
+	background-color: black;
+	color: white;
+	text-align: left;
+}
+body{
+	color: white;
+
+	background-image: url('https://s-media-cache-ak0.pinimg.com/736x/21/52/8d/21528d3c0e9e4d2d5deeb8e537175d27.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-size: 1.4rem;
+}
+.comic-title{
+	text-decoration: none !important;
+	color: red;
+}
+.comic-title:hover{
+	font-size: 2rem;
+	color: gold;
+}
+.comic-edit{
+	color:gold;
+	text-decoration: none !important;
+}
+.delete{
+	color:red;
+	text-decoration: none !important;
+	float: left;
+}
+a{
+font-size: 1.4rem;
+	color: navy;
+	
+}
+
