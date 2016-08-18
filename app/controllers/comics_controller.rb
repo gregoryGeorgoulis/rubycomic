@@ -10,7 +10,7 @@ class ComicsController < ApplicationController
   	ts = Time.now
   	pub_key = Rails.application.secrets.PUBLIC_KEY
   	pri_key = Rails.application.secrets.PRIVATE_KEY
-  	hash = Digest::MD5.hexdigest( ts + pri_key + pub_key )
+  	hash = Digest::MD5.hexdigest( ts.to_s + pri_key + pub_key )
   	uri = "http://gateway.marvel.com/v1/public/comics?title=#{@comic.title}&ts=#{ts}&apikey=#{pub_key}&hash=#{hash}"
   	@response = HTTParty.get(uri)
   end
