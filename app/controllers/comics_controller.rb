@@ -1,3 +1,4 @@
+require 'date'
 class ComicsController < ApplicationController
 	before_action :set_comic, only: [:show, :edit, :update, :destroy]
 
@@ -7,7 +8,7 @@ class ComicsController < ApplicationController
     end
 
   def show
-  	ts = Date.now
+  	ts = Time.now
   	pub_key = Rails.application.secrets.PUBLIC_KEY
   	pri_key = Rails.application.secrets.PRIVATE_KEY
   	hash = Digest::MD5.hexdigest( ts.to_s + pri_key + pub_key )
