@@ -1,4 +1,4 @@
-require 'date'
+require 'time'
 class ComicsController < ApplicationController
 	before_action :set_comic, only: [:show, :edit, :update, :destroy]
 
