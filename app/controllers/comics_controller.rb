@@ -1,6 +1,5 @@
 class ComicsController < ApplicationController
 	before_action :set_comic, only: [:show, :edit, :update, :destroy]
-  include time 
 	def new
         @comic = Comic.new
         p @comic   
