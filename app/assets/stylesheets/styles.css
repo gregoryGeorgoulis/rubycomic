@@ -26,7 +26,6 @@
 .navbar-link3{
 	color: white;
 	text-shadow: 1px 1px navy;
-	float: right;
 	padding: .2rem;
 }
 .navbar-link3:hover {
@@ -67,6 +66,13 @@ body{
 a{
 font-size: 1.4rem;
 	color: navy;
-	
 }
-
+img{
+	width: 20%;
+	height: auto;
+	transition: width 2s ease;
+}
+img:hover{
+	width: 30%;
+	height: auto;
+}

@@ -8,11 +8,17 @@ class ComicsController < ApplicationController
 
   def show
   	ts = Date.new
+    puts '==================>'
+    puts ts
+    puts '==================>'
   	pub_key = Rails.application.secrets.PUBLIC_KEY
   	pri_key = Rails.application.secrets.PRIVATE_KEY
   	hash = Digest::MD5.hexdigest( ts.to_s + pri_key + pub_key )
   	uri = "http://gateway.marvel.com/v1/public/comics?title=#{@comic.title}&ts=#{ts}&apikey=#{pub_key}&hash=#{hash}"
+    uri2 = "http://gateway.marvel.com/v1/public/comics?title=#{@comic.title}%20annual&ts=#{ts}&apikey=#{pub_key}&hash=#{hash}"
   	@response = HTTParty.get(uri)
+    @response2 = HTTParty.get(uri2)
+    p @response2 
   end
 
   def edit
