@@ -29,7 +29,7 @@
 			<img src="<%= @response["data"]['results'][i]['thumbnail']['path'] + "/portrait_incredible.jpg" %>"/>
 			<p><%= @response['data']['results'][i]['description'] %></p>
 			<br/>
-			<p><%= Date.parse(@response['data']['results'][i]['dates'][0]['date']).strftime('Released on %A %b %I, %Y')%></p>
+			<p><%= Date.parse(@response['data']['results'][i]['dates'][0]['date']).strftime('Released on %A %B %d, %Y')%></p>
 			<hr>
 			<br/>
 
