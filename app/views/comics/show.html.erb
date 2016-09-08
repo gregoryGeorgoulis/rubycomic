@@ -22,7 +22,7 @@
 		<h3><%= @response['data']['results'][0]['creators']['items'][0]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][0]['name'] %></h3>
 		<h3><%= @response['data']['results'][0]['creators']['items'][1]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][1]['name'] %></h3>
 		<br/>
-		<% for i in 0..10 %>
+		<% for i in @response['data']['results'].length %>
 
 			<p><%= @response['data']['results'][i]['title'] %></p>
 			<br/>
