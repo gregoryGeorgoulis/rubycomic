@@ -12,8 +12,8 @@
 		<h2>Looks like you spelled the comic wrong</h2>
 		<img src="http://www.space.ca/wp-content/uploads/2016/05/6002deadpool-143829-1462981759.jpg">
 		<br/>
-		<h2>So if you like edit the spelling</h2>
-		<%= link_to 'Edit', edit_comic_path(@comic.id), :class => 'comic-edit' %>
+		<h2>So if you would like to edit the spelling</h2>
+		<h2>Click</h2>	<%= link_to 'Edit', edit_comic_path(@comic.id), :class => 'comic-edit' %>
 
 	<% else %>
 
@@ -33,13 +33,12 @@
 			<p><%= Date.parse(@response['data']['results'][i]['dates'][0]['date']).strftime('Released on %A %B %d, %Y')%></p>
 			<hr>
 			<br/>
-
+			<h3>"Data provided by Marvel. © 2014 Marvel"</h3>
 		<% end %>
 
 	<% end %>
 
-	<br/>
-	<h3>"Data provided by Marvel. © 2014 Marvel"</h3>
+	
 	<br/>
 	<%= link_to 'Delete this comic', @comic, :method => 'delete', :class => 'delete' %>
 </body>

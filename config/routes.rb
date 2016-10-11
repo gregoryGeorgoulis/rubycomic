@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
 end
 #       Prefix Verb   URI Pattern                    Controller#Action
-#                     root GET    /                              patrons#index
+#                     root GET    /                              titles#main
 #                  patrons GET    /patrons(.:format)             patrons#index
 #                          POST   /patrons(.:format)             patrons#create
 #               new_patron GET    /patrons/new(.:format)         patrons#new
