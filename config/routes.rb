@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'patrons#index'
+  root 'titles#main'
   resources :patrons
   resources :comics
   devise_for :users

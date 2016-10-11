@@ -3,6 +3,14 @@
 	margin: 0 auto;
 	text-align: center;
 }
+#intro{
+	color: white;
+	background-image: url('http://img.wallpaperfolder.com/f/6DB257035235/deadpool-comic-art-and-mobile.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	font-size: 1.4rem;
+}
 #header{
 	background-color: red;
 	color: white;
@@ -39,7 +47,6 @@
 }
 body{
 	color: white;
-
 	background-image: url('https://s-media-cache-ak0.pinimg.com/736x/21/52/8d/21528d3c0e9e4d2d5deeb8e537175d27.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;

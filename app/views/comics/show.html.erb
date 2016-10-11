@@ -19,12 +19,13 @@
 
 		<h2>Hey <%= current_user.username %> Check out <%= @comic.title %> </h2>
 		<br/>
-		<h3><%= @response['data']['results'][0]['creators']['items'][0]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][0]['name'] %></h3>
-		<h3><%= @response['data']['results'][0]['creators']['items'][1]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][1]['name'] %></h3>
+		
 		<br/>
 		<% for i in 0..6 %>
 
 			<p><%= @response['data']['results'][i]['title'] %></p>
+			<p><%= @response['data']['results'][i]['creators']['items'][0]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][0]['name'] %></p>
+			<p><%= @response['data']['results'][i]['creators']['items'][1]['role'].capitalize %>: <%= @response['data']['results'][0]['creators']['items'][1]['name'] %></p>
 			<br/>
 			<img src="<%= @response["data"]['results'][i]['thumbnail']['path'] + "/portrait_incredible.jpg" %>"/>
 			<p><%= @response['data']['results'][i]['description'] %></p>
@@ -35,27 +36,10 @@
 
 		<% end %>
 
-		<% if @response2["data"]['results'].length > 0 %>
-
-			<h3><%= @response2['data']['results'][0]['creators']['items'][0]['role'].capitalize %>: <%= @response2['data']['results'][0]['creators']['items'][0]['name'] %></h3>
-			<h3><%= @response2['data']['results'][0]['creators']['items'][1]['role'].capitalize %>: <%= @response2['data']['results'][0]['creators']['items'][1]['name'] %></h3>
-			<br/>
-			<p><%= @response2['data']['results'][0]['title'] %></p>
-			<br/>
-			<img src="<%= @response2["data"]['results'][0]['thumbnail']['path'] + "/portrait_incredible.jpg" %>"/>
-			<p><%= @response2['data']['results'][0]['description'] %></p>
-			<br/>
-			<p><%= Date.parse(@response2['data']['results'][0]['dates'][0]['date']).strftime('Released on %A %b %I, %Y')%></p>
-			<hr>
-			<br/>
-
-		<% end %>
-
 	<% end %>
 
 	<br/>
 	<h3>"Data provided by Marvel. © 2014 Marvel"</h3>
-	
 	<br/>
 	<%= link_to 'Delete this comic', @comic, :method => 'delete', :class => 'delete' %>
 </body>
